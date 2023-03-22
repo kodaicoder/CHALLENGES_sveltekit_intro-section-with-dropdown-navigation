@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*? USING LOCAL FONT FROM STATIC FOLDER */
+@font-face {
+	font-family: 'Epilogue';
+	font-weight: 400 900;
+	font-display: swap;
+	src: url('fonts/Epilogue/Epilogue-VariableFont_wght.ttf') format('truetype');
+}
+
+/*? Simple Reset */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+* {
+	margin: 0;
+	font: inherit;
+}
+img,
+svg {
+	margin: 0;
+	display: block;
+	max-width: 100%;
+}
+/*?---------------- */
+
+/*? Using local font-family */
+body {
+	@apply font-epilogue text-lg text-mediumGray;
+}
+/*?---------------- */
+
+.footerLabel:after {
+	@apply content-[''] absolute top-1/2 -right-2 rotate-45 -translate-y-1/2 border-8 border-blue-500;
+}
