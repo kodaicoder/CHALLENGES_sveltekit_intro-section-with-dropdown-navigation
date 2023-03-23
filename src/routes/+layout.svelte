@@ -1,15 +1,18 @@
 <script>
+	import Navbar from '$lib/components/Navbar.svelte';
+	import Footer from '$lib/components/Footer.svelte';
 	import '../app.css';
-
-	import Footer from '../lib/components/Footer.svelte';
 </script>
 
-<div class="grid gap-8 p-5 md:min-h-screen md:place-content-center">
-	<main>
+<div class="flex flex-col gap-3 md:p-6 md:min-h-screen ">
+	<nav>
+		<Navbar />
+	</nav>
+	<main class="my-14">
 		<slot />
 	</main>
 
-	<footer class="mt-10 md:m-0">
+	<footer class="mt-2 md:m-0">
 		<Footer />
 	</footer>
 </div>
