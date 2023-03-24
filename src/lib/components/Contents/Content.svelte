@@ -3,7 +3,7 @@
 </script>
 
 <div
-	class="grid grid-flow-row gap-9 p-3 text-center items-center order-last lg:order-first lg:text-start lg:items-end lg:p-0 lg:w-[75%]"
+	class="grid grid-flow-row gap-9 p-3 text-center items-center order-last lg:order-first lg:text-start lg:items-end lg:p-0 lg:w-[70%]"
 >
 	<!--! HEADER -->
 	<div class="font-bold text-4xl text-almostBlack lg:text-7xl">
