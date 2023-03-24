@@ -14,9 +14,9 @@
 <!-- on:mouseenter={() => (dropDownShown = true)} -->
 <div class="relative">
 	<button
-		class="flex items-center gap-2 font-semibold md:font-normal p-2 rounded-lg transition-all duration-300
-        hover:text-almostBlack hover:brightness-0
-        {dropDownShown ? '!text-almostBlack' : ''}"
+		class="flex items-center gap-2 font-semibold md:font-normal p-3 px-5 rounded-2xl transition-all duration-300
+        hover:text-almostWhite hover:brightness-200 hover:bg-almostBlack
+        {dropDownShown ? '!text-almostWhite !bg-almostBlack !brightness-200' : ''}"
 		use:clickOutside={() => (dropDownShown = false)}
 		on:click={() => (dropDownShown = !dropDownShown)}
 	>
@@ -29,7 +29,7 @@
 	{#if dropDownShown}
 		<div
 			transition:slide
-			class=" md:absolute right-0 p-2 md:p-4 md:bg-almostWhite rounded-lg md:drop-shadow-md"
+			class=" md:absolute right-0 p-2 md:p-4 md:bg-almostWhite rounded-2xl md:drop-shadow-md"
 		>
 			<slot name="menu" />
 		</div>

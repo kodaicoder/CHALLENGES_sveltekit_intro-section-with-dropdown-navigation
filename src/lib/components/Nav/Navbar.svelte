@@ -2,7 +2,7 @@
 	import { browser } from '$app/environment';
 	import { slide, fade } from 'svelte/transition';
 	import logoImg from '$lib/images/logo.svg';
-	import NavList from './NavList.svelte';
+
 	import todoIcon from '$lib/images/icon-todo.svg';
 	import calendarIcon from '$lib/images/icon-calendar.svg';
 	import reminderIcon from '$lib/images/icon-reminders.svg';
@@ -11,6 +11,7 @@
 	import menuImg from '$lib/images/icon-menu.svg';
 	import closeImg from '$lib/images/icon-close-menu.svg';
 	import Dropdown from './Dropdown.svelte';
+	import NavList from './NavList.svelte';
 	let menuShow = false;
 	let innerWidth = 0;
 
@@ -52,7 +53,7 @@
 <svelte:window bind:innerWidth />
 
 <div
-	class=" md:relative md:p-0 w-full fixed top-0 left-0 p-4 bg-white grid grid-flow-col items-center "
+	class=" w-full fixed top-0 left-0 px-8 py-4 bg-white/80 backdrop-blur grid grid-flow-col items-center "
 >
 	<div class="grid grid-flow-col-dense justify-between lg:justify-start gap-16">
 		<a href="#/" class=" justify-self-center self-center">
@@ -66,35 +67,42 @@
 		</div>
 
 		<!-- normal nav -->
-		<ul class="hidden lg:flex gap-4">
-			<Dropdown text="Features">
-				<ul slot="menu">
-					<NavList iconSrc={todoIcon} text="Todo List" href="#todolist" />
-					<NavList iconSrc={calendarIcon} text="Calendar" href="#calendar" />
-					<NavList iconSrc={reminderIcon} text="Reminders" href="#reminders" />
-					<NavList iconSrc={planIcon} text="Planning" href="#planning" />
-				</ul>
-			</Dropdown>
-			<Dropdown text="Company">
-				<ul slot="menu">
-					<NavList text="History" href="#history" />
-					<NavList text="Our Team" href="#team" />
-					<NavList text="Blog" href="#blog" />
-				</ul>
-			</Dropdown>
+		<ul class="hidden lg:flex gap-2">
+			<li>
+				<Dropdown text="Features">
+					<ul class="w-max" slot="menu">
+						<NavList iconSrc={todoIcon} text="Todo List" href="#todolist" />
+						<NavList iconSrc={calendarIcon} text="Calendar" href="#calendar" />
+						<NavList iconSrc={reminderIcon} text="Reminders" href="#reminders" />
+						<NavList iconSrc={planIcon} text="Planning" href="#planning" />
+					</ul>
+				</Dropdown>
+			</li>
+			<li>
+				<Dropdown text="Company">
+					<ul slot="menu">
+						<NavList text="History" href="#history" />
+						<NavList text="Our Team" href="#team" />
+						<NavList text="Blog" href="#blog" />
+					</ul>
+				</Dropdown>
+			</li>
 			<NavList text="Careers" href="#careers" />
 			<NavList text="About" href="#about" />
 		</ul>
 	</div>
-	<ul class="hidden lg:flex justify-end items-center gap-12">
+	<ul class="hidden lg:flex justify-end items-center gap-4">
 		<li>
-			<a class="transition-all duration-300 hover:text-almostBlack" href="#login">Login</a>
+			<a
+				class="rounded-2xl p-3 px-5 border border-transparent  transition-all duration-300 hover:text-almostWhite hover:bg-almostBlack"
+				href="#login">Login</a
+			>
 		</li>
 		<li>
 			<a
 				class="p-3 px-5 border-2 rounded-2xl border-mediumGray
 					transition-all duration-300
-					hover:border-almostBlack hover:text-almostBlack"
+					hover:text-almostWhite hover:bg-almostBlack hover:border-almostBlack"
 				href="#register">Register</a
 			>
 		</li>
@@ -162,13 +170,16 @@
 				</ul>
 				<ul class=" grid gap-4 mt-8">
 					<li>
-						<button class="w-full transition-all duration-300 hover:text-almostBlack">Login</button>
+						<button
+							class="rounded-2xl p-3 px-5 border border-transparent   w-full transition-all duration-300 hover:text-almostWhite hover:bg-almostBlack"
+							>Login</button
+						>
 					</li>
 					<li>
 						<button
 							class="w-full p-1 border-2 rounded-2xl border-mediumGray 
 								transition-all duration-300
-								hover:border-almostBlack hover:text-almostBlack">Register</button
+								hover:text-almostWhite hover:bg-almostBlack hover:border-almostBlack">Register</button
 						>
 					</li>
 				</ul>

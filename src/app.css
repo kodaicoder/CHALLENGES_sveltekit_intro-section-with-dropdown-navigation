@@ -31,7 +31,7 @@ svg {
 
 /*? Using local font-family */
 body {
-	@apply font-epilogue text-lg font-medium text-mediumGray;
+	@apply font-epilogue font-medium text-mediumGray;
 }
 /*?---------------- */
 

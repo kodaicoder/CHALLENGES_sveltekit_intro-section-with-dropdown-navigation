@@ -1,14 +1,14 @@
 <script>
-	import Navbar from '$lib/components/Navbar.svelte';
+	import Navbar from '$lib/components/Nav/Navbar.svelte';
 	import Footer from '$lib/components/Footer.svelte';
 	import '../app.css';
 </script>
 
-<div class="flex flex-col gap-3 md:p-6 md:min-h-screen ">
+<div class="grid gap-3 md:p-8 md:min-h-screen ">
 	<nav>
 		<Navbar />
 	</nav>
-	<main class="my-14">
+	<main>
 		<slot />
 	</main>
 

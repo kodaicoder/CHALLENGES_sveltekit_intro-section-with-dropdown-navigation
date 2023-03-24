@@ -6,13 +6,19 @@ export function clickOutside(element, callbackFunction) {
 			callbackFunction();
 		}
 	}
-	document.body.addEventListener('click', onClick);
+	document.addEventListener('click', onClick);
 	return {
 		update(newCallbackFunction) {
 			callbackFunction = newCallbackFunction;
 		},
 		destroy() {
-			document.body.removeEventListener('click', onClick);
+			document.removeEventListener('click', onClick);
 		}
+		// pause() {
+		// 	document.removeEventListener('click', onClick);
+		// },
+		// resume() {
+		// 	document.addEventListener('click', onClick);
+		// }
 	};
 }
